@@ -5,6 +5,8 @@ import { HeartOutlined } from '@ant-design/icons'
 import { Card } from 'antd'
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons'
 import { Row, Col, Divider } from 'antd'
+import { PlusOutlined } from '@ant-design/icons'
+import { Button } from 'antd'
 
 const { SubMenu } = Menu
 const { Header, Content, Sider } = Layout
@@ -54,16 +56,14 @@ function App() {
                   <div style={style}>
                     {' '}
                     <Card
-                      style={{ width: 300 }}
+                      style={{ width: 300, height: 300 }}
                       cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
+                        <Button style={{ height: 300, color: 'green', borderColor: 'green' }} type='dashed'>
+                          <PlusOutlined key='plus' style={{ color: 'green', fontSize: 40 }} />
+                        </Button>
                       }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
+                      actions={[]}>
+                      <Meta title='' description='' />
                     </Card>
                   </div>
                 </Col>
