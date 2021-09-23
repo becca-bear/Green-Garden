@@ -14,7 +14,7 @@ const { Meta } = Card
 const style = { background: '#F0F2F5', padding: '8px 0' }
 
 function App() {
-  function PlusSign() {
+  function plusSign() {
     console.log('Panda')
   }
   return (
