@@ -62,7 +62,7 @@ function App() {
                       style={{ width: 300, height: 300 }}
                       cover={
                         <Button
-                          onClick={PlusSign}
+                          onClick={plusSign}
                           style={{ height: 300, color: 'green', borderColor: 'green' }}
                           type='dashed'>
                           <PlusOutlined key='plus' style={{ color: 'green', fontSize: 40 }} />
