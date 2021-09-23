@@ -14,6 +14,9 @@ const { Meta } = Card
 const style = { background: '#F0F2F5', padding: '8px 0' }
 
 function App() {
+  function PlusSign() {
+    console.log('Panda')
+  }
   return (
     <div className='App'>
       <Layout>
@@ -58,7 +61,10 @@ function App() {
                     <Card
                       style={{ width: 300, height: 300 }}
                       cover={
-                        <Button style={{ height: 300, color: 'green', borderColor: 'green' }} type='dashed'>
+                        <Button
+                          onClick={PlusSign}
+                          style={{ height: 300, color: 'green', borderColor: 'green' }}
+                          type='dashed'>
                           <PlusOutlined key='plus' style={{ color: 'green', fontSize: 40 }} />
                         </Button>
                       }
