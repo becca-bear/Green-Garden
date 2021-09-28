@@ -14,6 +14,24 @@ const { Meta } = Card
 const style = { background: '#F0F2F5', padding: '8px 0' }
 
 function App() {
+  const numbers = [0, 1, 2, 3, 4]
+  const listOfCards: JSX.Element[] = numbers.map(index => (
+    <Col key={index} className='gutter-row' span={7}>
+      <div style={style}>
+        {' '}
+        <Card
+          style={{ width: 300 }}
+          cover={<img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />}
+          actions={[
+            <SettingOutlined key='setting' />,
+            <EditOutlined key='edit' />,
+            <EllipsisOutlined key='ellipsis' />
+          ]}>
+          <Meta title='Card title' description='This is the description' />
+        </Card>
+      </div>
+    </Col>
+  ))
   function plusSign() {
     console.log('Panda')
   }
@@ -54,8 +72,8 @@ function App() {
               }}>
               The Green Garden
               <Divider orientation='left'></Divider>
-              <Row gutter={[16, 24]}>
-                <Col className='gutter-row' span={6}>
+              <Row gutter={[5, 24]}>
+                <Col className='gutter-row' span={7}>
                   <div style={style}>
                     {' '}
                     <Card
@@ -73,125 +91,7 @@ function App() {
                     </Card>
                   </div>
                 </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
-                <Col className='gutter-row' span={6}>
-                  <div style={style}>
-                    {' '}
-                    <Card
-                      style={{ width: 300 }}
-                      cover={
-                        <img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />
-                      }
-                      actions={[
-                        <SettingOutlined key='setting' />,
-                        <EditOutlined key='edit' />,
-                        <EllipsisOutlined key='ellipsis' />
-                      ]}>
-                      <Meta title='Card title' description='This is the description' />
-                    </Card>
-                  </div>
-                </Col>
+                {listOfCards}
               </Row>
             </Content>
           </Layout>
