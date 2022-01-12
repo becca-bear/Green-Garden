@@ -7,6 +7,7 @@ import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/ico
 import { Row, Col, Divider } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
+import { useState } from 'react'
 
 const { SubMenu } = Menu
 const { Header, Content, Sider } = Layout
@@ -14,6 +15,7 @@ const { Meta } = Card
 const style = { background: '#F0F2F5', padding: '8px 0' }
 
 function App() {
+  const [list_of_plants, SetListOfFlowers] = useState(['pink flower'])
   const numbers = [0, 1, 2, 3, 4]
   const listOfCards: JSX.Element[] = numbers.map(index => (
     <Col key={index} className='gutter-row' span={7}>
@@ -34,6 +36,7 @@ function App() {
   ))
   function plusSign() {
     console.log('Panda')
+    SetListOfFlowers(list_of_plants => [...list_of_plants, 'red rose'])
   }
   return (
     <div className='App'>
@@ -70,7 +73,7 @@ function App() {
                 margin: 0,
                 minHeight: 280
               }}>
-              The Green Garden
+              The Green Garden {list_of_plants}
               <Divider orientation='left'></Divider>
               <Row gutter={[5, 24]}>
                 <Col className='gutter-row' span={7}>
