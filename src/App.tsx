@@ -36,7 +36,7 @@ function App() {
   ))
   function plusSign() {
     console.log('Panda')
-    SetListOfFlowers(list_of_plants => [...list_of_plants, 'red rose'])
+    SetListOfFlowers([...list_of_plants, 'red rose'])
   }
   return (
     <div className='App'>
