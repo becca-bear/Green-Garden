@@ -17,13 +17,27 @@ const style = { background: '#F0F2F5', padding: '8px 0' }
 function App() {
   const [list_of_plants, SetListOfFlowers] = useState(['pink flower'])
   const numbers = [0, 1, 2, 3, 4]
-  const listOfCards: JSX.Element[] = numbers.map(index => (
+  let source = 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+  if (Math.random() < 0.1) {
+    source = 'https://www.pngitem.com/pimgs/m/275-2759609_giant-panda-bamboo-drawing-cute-panda-with-bamboo.png'
+  }
+
+  const newCard = (index: number) => (
     <Col key={index} className='gutter-row' span={7}>
       <div style={style}>
-        {' '}
         <Card
           style={{ width: 300 }}
-          cover={<img alt='example' src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png' />}
+          cover={<img alt='example' src={source} />}
+          actions={[
+            <SettingOutlined key='setting' />,
+            <EditOutlined key='edit' />,
+            <EllipsisOutlined key='ellipsis' />
+          ]}>
+          <Meta title='Card title' description='This is the description' />
+        </Card>
+        <Card
+          style={{ width: 300 }}
+          cover={<img alt='example' src={source} />}
           actions={[
             <SettingOutlined key='setting' />,
             <EditOutlined key='edit' />,
@@ -33,10 +47,12 @@ function App() {
         </Card>
       </div>
     </Col>
-  ))
+  )
+
+  const [listOfCards, SetListOfCards] = useState(numbers.map(index => newCard(index)))
   function plusSign() {
-    console.log('Panda')
-    SetListOfFlowers([...list_of_plants, 'red rose'])
+    SetListOfFlowers([...list_of_plants])
+    SetListOfCards([...listOfCards, newCard(listOfCards.length)])
   }
   return (
     <div className='App'>
